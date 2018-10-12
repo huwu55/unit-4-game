@@ -107,6 +107,7 @@ $(".character").click(function(){
 $("#attack").click(function(){
     if($(".defender").children().length > 1 && attacker.healthPoint > 0)
         calculateHP(attacker,defender);
+    else if (attacker.healthPoint <= 0 || $(".enemiesAvailableToAttack").children().length === 1);
     else {
         $("#comment1").html("<p>No enemies here.</p>");
         $("#comment2").html("");
