@@ -88,17 +88,17 @@ $(".character").click(function(){
     if($("#selectCharacter").children().length > 0){
         $("#"+$(this).attr('id')).appendTo($(".yourCharacter"));
         attacker = returnCharacter($(this).attr('id'));
+        $("#selectCharacter").children().addClass("red");
         $("#selectCharacter").children().appendTo($(".enemiesAvailableToAttack"));
     }
     else if($(".enemiesAvailableToAttack").children().length > 0 
         && $(".defender").children().length === 1){
         if($(this).parent().attr("class") != "yourCharacter"){
             $("#"+$(this).attr('id')).appendTo($(".defender"));
-            {
-                defender = returnCharacter($(this).attr('id'));
-                $("#comment1").html("");
-                $("#comment2").html("");
-            }
+            $("#"+$(this).attr('id')).removeClass("red");
+            defender = returnCharacter($(this).attr('id'));
+            $("#comment1").html("");
+            $("#comment2").html("");
         }
     }
 });
